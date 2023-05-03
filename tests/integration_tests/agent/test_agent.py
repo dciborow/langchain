@@ -13,4 +13,4 @@ class TestAgent:
             tools=tools,
             llm=OpenAI(maxTokens=10),
         )
-        assert agent.allowed_tools == set([web_search.name])
+        assert agent.allowed_tools == {web_search.name}

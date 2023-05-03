@@ -72,7 +72,7 @@ class LangChainTracer(BaseTracer):
 
             tracer_session = TracerSession(**r.json()[0])
         except Exception as e:
-            session_type = "default" if not session_name else session_name
+            session_type = session_name if session_name else "default"
             logging.warning(
                 f"Failed to load {session_type} session, using empty session: {e}"
             )
